@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>حبيبة محمد عبدالله حسين | إدارة استثمار رائدة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(145deg, #f0f4f8 0%, #e8edf3 100%);
+            color: #1a2c3e;
+            line-height: 1.5;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 25px;
+        }
+        .hero {
+            background: radial-gradient(circle at 10% 30%, #0b2b40, #071a24);
+            border-radius: 48px;
+            padding: 40px 35px;
+            margin-bottom: 45px;
+            box-shadow: 0 25px 45px -12px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .profile-pic {
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, #ffd966, #ffb347);
+            border-radius: 50%;
+            padding: 4px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        .profile-pic:hover {
+            transform: scale(1.03);
+        }
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        .hero-text h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFF9C4, #FFE082);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .hero-text p {
+            color: #cfebff;
+            font-size: 1.2rem;
+            margin-top: 12px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 35px;
+        }
+        .stat-card {
+            background: rgba(255,255,240,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 28px;
+            padding: 15px 20px;
+            text-align: center;
+            border: 1px solid rgba(255,215,0,0.3);
+            transition: all 0.3s;
+        }
+        .stat-card i {
+            font-size: 2rem;
+            color: #ffd966;
+            margin-bottom: 8px;
+        }
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            direction: ltr;
+            display: inline-block;
+        }
+        .stat-label {
+            color: #ffecb3;
+            font-size: 0.85rem;
+        }
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #25D366;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: 0.3s;
+            font-size: 1.1rem;
+        }
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: scale(1.02);
+        }
+        .comments-section {
+            margin-top: 35px;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            border-right: 7px solid #f7b32b;
+            padding-right: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .comments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 28px;
+        }
+        .comment-card {
+            background: white;
+            border-radius: 32px;
+            padding: 22px;
+            transition: all 0.25s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border: 1px solid rgba(255,200,100,0.3);
+        }
+        .comment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.2);
+        }
+        .comment-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+        .client-avatar {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ffb347;
+        }
+        .reviewer-info {
+            flex: 1;
+        }
+        .reviewer-name {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #1f3b4c;
+        }
+        .stars {
+            color: #ffb347;
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+        .comment-time {
+            font-size: 0.7rem;
+            color: #6c7a89;
+            margin: 8px 0 5px;
+        }
+        .comment-text {
+            font-size: 0.95rem;
+            margin: 12px 0 14px;
+            line-height: 1.55;
+            color: #2c3e44;
+        }
+        .like-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 10px;
+            border-top: 1px solid #ffe0a3;
+            padding-top: 12px;
+        }
+        .like-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #b87333;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .like-count {
+            font-weight: bold;
+            font-size: 0.85rem;
+            background: #f0e9db;
+            padding: 2px 12px;
+            border-radius: 40px;
+        }
+        .load-more-container {
+            text-align: center;
+            margin: 45px 0 30px;
+        }
+        .load-more-btn {
+            background: linear-gradient(135deg, #1f6392, #0e3e5c);
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .load-more-btn:hover {
+            transform: scale(1.02);
+            background: #0e3e5c;
+        }
+        .limit-message {
+            background: #fef3c7;
+            border-right: 5px solid #f7b32b;
+            padding: 18px;
+            border-radius: 24px;
+            margin-top: 20px;
+            text-align: center;
+            color: #92400e;
+        }
+        footer {
+            text-align: center;
+            margin-top: 55px;
+            padding: 25px;
+            font-size: 0.8rem;
+            color: #3a5e74;
+            border-top: 1px solid #ddd;
+        }
+        @media (max-width: 750px) {
+            .comments-grid { grid-template-columns: 1fr; }
+            .hero-text h1 { font-size: 1.8rem; }
+            .stat-number { font-size: 1.3rem; }
+        }
+        .toast-message {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #1f3b4c;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 50px;
+            z-index: 1000;
+            animation: fadeInUp 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="hero">
+        <div class="profile-section">
+            <div class="profile-pic">
+                <img src="prof.png" alt="حبيبة محمد" onerror="this.src='https://randomuser.me/api/portraits/women/68.jpg'">
+            </div>
+            <div class="hero-text">
+                <h1>حبيبة محمد عبدالله حسين</h1>
+                <p>مديرة استثمار معتمدة • خبيرة أسواق مالية • أكتر من 15 سنة خبرة</p>
+                <a href="https://wa.me/201117097868?text=السلام%20عليكم%20أريد%20الاشتراك%20مع%20الأستاذة%20حبيبة" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp fa-lg"></i> قم بالتحدث مع الأستاذة حبيبة للاشتراك
+                </a>
+            </div>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card"><i class="fas fa-users"></i><div><span class="stat-number">223,847</span><div class="stat-label">مشترك</div></div></div>
+            <div class="stat-card"><i class="fas fa-comments"></i><div><span class="stat-number">171,502</span><div class="stat-label">رأي وتقييم</div></div></div>
+            <div class="stat-card"><i class="fas fa-heart"></i><div><span class="stat-number">201,934</span><div class="stat-label">إعجاب بالتعليقات</div></div></div>
+            <div class="stat-card"><i class="fas fa-thumbs-up"></i><div><span class="stat-number">220,189</span><div class="stat-label">إعجاب بالصفحة</div></div></div>
+        </div>
+    </div>
+
+    <div class="comments-section">
+        <div class="section-title">
+            <span><i class="fas fa-star-of-life"></i> آراء العملاء المشتركين (أكتر من 170 ألف رأي)</span>
+            <small style="font-size: 0.8rem; background:#eee; padding:5px 12px; border-radius:30px;"><i class="fas fa-check-circle"></i> كل الآراء لأعضاء مشتركين</small>
+        </div>
+        <div class="comments-grid" id="commentsGrid"></div>
+        <div class="load-more-container" id="loadMoreContainer">
+            <button class="load-more-btn" id="loadMoreBtn">📋 عرض المزيد من الآراء</button>
+        </div>
+        <div id="limitMessage" style="display: none;" class="limit-message">
+            <i class="fas fa-lock fa-lg"></i> تم عرض الحد الأقصى من آراء العملاء المتاح لك.<br>
+            نشكرك على النظر للمصداقية، وبنشجعك على <strong>الاشتراك مع المستثمرة حبيبة</strong> عشان تطلع على كامل 171,502 رأي حقيقي.
+        </div>
+    </div>
+    <footer>
+        © 2026 حبيبة محمد عبدالله حسين - إدارة استثمار رائدة. كل الآراء بتعبر عن عملاء مسجلين.
+        <br>للااشتراك والتواصل: <strong>01117097868</strong> (واتساب)
+    </footer>
+</div>
+
+<script>
+    // ============================================================
+    // قاعدة بيانات التعليقات - اللهجة المصرية + تواريخ بالساعات
+    // ============================================================
+    
+    // دوال لتوليد وقت عشوائي (منذ ساعات)
+    function getRandomTimeAgo() {
+        const hours = [1, 2, 3, 5, 8, 12, 15, 18, 20, 22, 24, 30, 36, 42, 48];
+        const randomHour = hours[Math.floor(Math.random() * hours.length)];
+        if (randomHour === 1) return `منذ ساعة`;
+        if (randomHour < 24) return `منذ ${randomHour} ساعات`;
+        const days = Math.floor(randomHour / 24);
+        if (days === 1) return `منذ يوم`;
+        return `منذ ${days} أيام`;
+    }
+    
+    const commentsPool = [
+        { name: "أحمد سعيد", avatar: "https://randomuser.me/api/portraits/men/11.jpg", stars: 5, text: "والله حبيبة ديه فنانة يا باشا، أنا استثمرت معاها من 6 شهور والحمدلله ربحي 40% على المحفظة. أنصح أي حد يخش معاها.", likes: 847 },
+        { name: "منى عبدالرحمن", avatar: "https://randomuser.me/api/portraits/women/23.jpg", stars: 5, text: "حبيبة دي محترفة جداً، بتفهم في السوق أوي وبتخلي الواثقة في ربنا الأول وبعدين فيها. بصراحة أحسن مديرة استثمار.", likes: 612 },
+        { name: "خالد إبراهيم", avatar: "https://randomuser.me/api/portraits/men/45.jpg", stars: 5, text: "الكلام ده من دهب بجد، حبيبة شخصية ثقة وأمانة. أنا كنت خايف في الأول بس دلوقتي بقيت من أكتر الناس سعادة.", likes: 523 },
+        { name: "نورا حسن", avatar: "https://randomuser.me/api/portraits/women/56.jpg", stars: 5, text: "ربنا يبارك فيها يا رب، أنا عملت أضعاف أرباح من غير تعب. حبيبة دي نعمة والله.", likes: 734 },
+        { name: "محمود فتحي", avatar: "https://randomuser.me/api/portraits/men/32.jpg", stars: 5, text: "محفظتي كانت بايظة وخسرانة، حبيبة رجعتلي الأمل وزودت أرباحي 70% في 8 شهور. شكراً حبيبة.", likes: 956 },
+        { name: "هبة عصام", avatar: "https://randomuser.me/api/portraits/women/44.jpg", stars: 5, text: "أنا بحب أتعامل معاها لأنها صريحة ومابتكدبش. بتقول الحق حتى لو وحش. أنا بعشق ثقتها في ربنا.", likes: 488 },
+        { name: "يوسف طارق", avatar: "https://randomuser.me/api/portraits/men/67.jpg", stars: 5, text: "حبيبة دي عبقرية في التحليل المالي. جابتلي صفقات عالمية وربحت كتير أوي. ربنا يخليهالنا.", likes: 671 },
+        { name: "سارة مجدي", avatar: "https://randomuser.me/api/portraits/women/89.jpg", stars: 5, text: "أنا مبسوطة جداً إنى سمعت نصيحة صاحبتي واشتريكت مع حبيبة. بجد تستاهل كل خير.", likes: 392 },
+        { name: "أحمد رضا", avatar: "https://randomuser.me/api/portraits/men/78.jpg", stars: 5, text: "والله العظيم حبيبة دي جوهرة، بتخلي الفلوس تشتغل أحسن من أي بنك. أنصح بجد.", likes: 745 },
+        { name: "فاطمة الزهراء", avatar: "https://randomuser.me/api/portraits/women/33.jpg", stars: 5, text: "ربنا يجزيكي كل خير يا حبيبة، أنا كنت خايفة من الاستثمار بس دلوقتي بقيت فاهمة الدنيا بسببك.", likes: 567 },
+        { name: "عمرو سمير", avatar: "https://randomuser.me/api/portraits/men/54.jpg", stars: 5, text: "أنا بقالي سنتين مع حبيبة والحمدلله محفظتي تضاعفت 3 مرات. ده غير النصايح اليومية اللي بتديها.", likes: 823 },
+        { name: "لبنى عاطف", avatar: "https://randomuser.me/api/portraits/women/19.jpg", stars: 5, text: "حبيبة دي نعمة من ربنا، أنا بطلت شغلي عشان أرباحي معاها بقيت أحسن من مرتبي!", likes: 689 },
+        { name: "كريم مصطفى", avatar: "https://randomuser.me/api/portraits/men/38.jpg", stars: 5, text: "بجد مديرة محترمة ومتفهمة. بترد على كل أسئلتي حتى لو ساعات متأخرة. شكراً يا حبيبة.", likes: 434 },
+        { name: "دينا صبري", avatar: "https://randomuser.me/api/portraits/women/72.jpg", stars: 5, text: "مفيش زي حبيبة في الصراحة والوضوح. بتقول للمستثمر المكسب والخسارة من غير لف ودوران.", likes: 501 },
+        { name: "شادي محمد", avatar: "https://randomuser.me/api/portraits/men/41.jpg", stars: 5, text: "الحمدلله إني عرفتها، أرباحى السنوية 35% بفضل خططها الذكية. تستحق كل نجمة.", likes: 777 }
+    ];
+    
+    // إضافة تعليقات إضافية متنوعة (لهجة مصرية بحتة)
+    const extraEgyptian = [
+        { name: "إنجي وائل", avatar: "https://randomuser.me/api/portraits/women/62.jpg", stars: 5, text: "حبيبة دي ست محترمة فشخ، بتخلي الواحد يطمن على فلوسه. أنا مبسوطة أوي.", likes: 346 },
+        { name: "هشام عبدالله", avatar: "https://randomuser.me/api/portraits/men/51.jpg", stars: 5, text: "والله أنا كنت شاكك في الأول بس دلوقتي بقيت من أكتر الناس ثقة فيها. حبيبة عظيمة.", likes: 619 },
+        { name: "نهى كمال", avatar: "https://randomuser.me/api/portraits/women/28.jpg", stars: 5, text: "أنا بقالي سنة معاها والحمدلله أرباحي زادت 50%. أحسن قرار استثماري في حياتي.", likes: 528 },
+        { name: "إبراهيم سامي", avatar: "https://randomuser.me/api/portraits/men/85.jpg", stars: 5, text: "حبيبة دي ناس فاهمة، بجد عبقري في المجال. أوصي كل أصحابي يخشوا معاها.", likes: 763 },
+        { name: "أميرة خالد", avatar: "https://randomuser.me/api/portraits/women/39.jpg", stars: 5, text: "الحمدلله إني سمعت كلامها، أنا دلوقتي مستقلة ماليًا بسبب نصايحها.", likes: 492 }
+    ];
+    
+    // دمج الكل
+    const allCommentsRaw = [...commentsPool, ...extraEgyptian];
+    
+    // توليد 60+ تعليق إضافي عشوائي بنفس اللهجة المصرية
+    for (let i = 0; i < 50; i++) {
+        const names = ["أحمد", "محمد", "علي", "محمود", "خالد", "عمرو", "كريم", "هشام", "طارق", "سامح", "مينا", "إياد", "نور", "شريف", "حسام"];
+        const femaleNames = ["منى", "نورا", "سارة", "هبة", "دينا", "لبنى", "فاطمة", "نسمة", "إنجي", "أميرة", "نهى", "شيماء"];
+        const isFemale = Math.random() > 0.6;
+        let name;
+        if (isFemale) {
+            name = femaleNames[Math.floor(Math.random() * femaleNames.length)] + " " + ["أحمد", "محمود", "علي", "خالد"][Math.floor(Math.random()*4)];
+        } else {
+            name = names[Math.floor(Math.random() * names.length)] + " " + ["إبراهيم", "سعيد", "عبدالله", "حسن", "علي"][Math.floor(Math.random()*5)];
+        }
+        const texts = [
+            "حبيبة دي جامدة أوي، أنا زودت أرباحي 60% في 6 شهور. أنصح أي حد يسأل عليها.",
+            "بجد مديرة محترمة وبتخاف على فلوس الناس. شكراً يا حبيبة.",
+            "أنا كنت خسران كتير في البورصة ولما اشتريت مع حبيبة الدنيا اتحسنت. الحمدلله.",
+            "حبيبة دي فنانة في الاستثمار، بتعرف تجيب فرص حلوة أوي. ربنا يبارك فيها.",
+            "أحسن حاجة عملتها في حياتي إني اشتركت مع حبيبة. بجد تستحق التقدير.",
+            "والله أنا مبسوط أوي، محفظتي عاملة أرباح خيالية بفضل نصايحها اليومية.",
+            "حبيبة دي ست أصيلة ومحترمة، بتخلي الواثقة في ربنا. كلكم اشتتركوا معاها.",
+            "ربنا يباركلك يا حبيبة، أنا بقيت أغنى بفضل ربنا ثم بفضلك.",
+            "أنا بشكرها على تعبها معايا، كانت دايماً موجودة لما أحتاجها.",
+            "حبيبة دي عبقرية، بتفهم في السوق أكتر من أي حد. أنا فخور إني من عملائها."
+        ];
+        allCommentsRaw.push({
+            name: name,
+            avatar: `https://randomuser.me/api/portraits/${isFemale ? 'women' : 'men'}/${Math.floor(Math.random() * 99)}.jpg`,
+            stars: 5,
+            text: texts[Math.floor(Math.random() * texts.length)],
+            likes: Math.floor(Math.random() * 600) + 200
+        });
+    }
+    
+    // إضافة الوقت لكل تعليق
+    const allComments = allCommentsRaw.map(comment => ({
+        ...comment,
+        timeAgo: getRandomTimeAgo()
+    }));
+    
+    // متغيرات العرض
+    let displayedCount = 0;
+    const DISPLAY_STEP = 13;
+    let currentComments = [];
+    
+    // دالة خلط عشوائي (Fisher-Yates)
+    function shuffleArray(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+    }
+    
+    // تجهيز قائمة عشوائية من التعليقات
+    function initRandomComments() {
+        currentComments = shuffleArray([...allComments]);
+        displayedCount = 0;
+    }
+    
+    // عرض التوست
+    function showToast(message) {
+        const existingToast = document.querySelector('.toast-message');
+        if(existingToast) existingToast.remove();
+        const toast = document.createElement('div');
+        toast.className = 'toast-message';
+        toast.innerHTML = `<i class="fas fa-info-circle"></i> ${message}`;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 3000);
+    }
+    
+    // عرض التعليقات
+    function renderComments() {
+        const grid = document.getElementById('commentsGrid');
+        if(!grid) return;
+        grid.innerHTML = '';
+        const toShow = currentComments.slice(0, displayedCount);
+        toShow.forEach(comment => {
+            const card = document.createElement('div');
+            card.className = 'comment-card';
+            let starsHtml = '';
+            for(let s = 0; s < 5; s++) starsHtml += '<i class="fas fa-star"></i>';
+            card.innerHTML = `
+                <div class="comment-header">
+                    <img class="client-avatar" src="${comment.avatar}" onerror="this.src='https://randomuser.me/api/portraits/lego/1.jpg'">
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">${escapeHtml(comment.name)}</div>
+                        <div class="stars">${starsHtml}</div>
+                    </div>
+                </div>
+                <div class="comment-time"><i class="far fa-clock"></i> ${comment.timeAgo}</div>
+                <div class="comment-text">${escapeHtml(comment.text)}</div>
+                <div class="like-area">
+                    <button class="like-btn" data-idx="${displayedCount}xxx${comment.name}"><i class="far fa-heart"></i> <span>أعجبني</span></button>
+                    <span class="like-count">❤️ ${comment.likes.toLocaleString()}</span>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+        
+        // ربط أزرار الإعجاب
+        document.querySelectorAll('.like-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                // أي زائر يضغط لايك تظهر رسالة اشتراك
+                showToast("❌ قم بالاشتراك مع المستثمرة حبيبة أولاً حتى تتمكن من التفاعل أو الإعجاب! جميع العملاء اللي علقوا مشتركين فعلاً.");
+            });
+        });
+    }
+    
+    function escapeHtml(str) {
+        return str.replace(/[&<>]/g, function(m) {
+            if(m === '&') return '&amp;';
+            if(m === '<') return '&lt;';
+            if(m === '>') return '&gt;';
+            return m;
+        });
+    }
+    
+    // تحميل المزيد
+    function loadMore() {
+        if(displayedCount >= currentComments.length) {
+            document.getElementById('limitMessage').style.display = 'block';
+            document.getElementById('loadMoreBtn').style.display = 'none';
+            return;
+        }
+        let newCount = displayedCount + DISPLAY_STEP;
+        if(newCount > currentComments.length) newCount = currentComments.length;
+        displayedCount = newCount;
+        renderComments();
+        if(displayedCount >= currentComments.length) {
+            document.getElementById('limitMessage').style.display = 'block';
+            document.getElementById('loadMoreBtn').style.display = 'none';
+        }
+    }
+    
+    // بدء التشغيل
+    initRandomComments();
+    // عرض أول 13 تعليق
+    displayedCount = Math.min(DISPLAY_STEP, currentComments.length);
+    renderComments();
+    
+    // زر عرض المزيد
+    document.getElementById('loadMoreBtn').addEventListener('click', loadMore);
+    
+    // إضافة ستايل إضافي
+    const style = document.createElement('style');
+    style.textContent = `
+        .like-btn:hover { transform: scale(1.07); color:#e67e22; }
+        .comment-card { transition: all 0.2s ease; }
+    `;
+    document.head.appendChild(style);
+    
+    console.log("تم تحميل الصفحة بعدد تعليقات إجمالي: ", allComments.length);
+</script>
+</body>
+</html>
